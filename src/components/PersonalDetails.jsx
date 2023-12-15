@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { InputBar } from "./inputbar";
 
 function PersonalDetails({
@@ -5,6 +6,10 @@ function PersonalDetails({
   handleNameChange,
   emailValue = "",
   handleEmailChange,
+  phoneNumberValue,
+  handlePhoneNumberChange,
+  addressValue,
+  handleAddressValueChange,
 }) {
   return (
     <div className="builder__personal-details">
@@ -22,6 +27,20 @@ function PersonalDetails({
         inputPlaceholder="Enter Email Here"
         inputValue={emailValue}
         handleChange={handleEmailChange}
+      />
+      <h2 className="builder__personal-details__label">Phone Number</h2>
+      <InputBar
+        inputType="tel"
+        inputPlaceholder="Phone Number Here"
+        inputValue={phoneNumberValue}
+        handleChange={handlePhoneNumberChange}
+      />
+      <h2 className="builder__personal-details__label">Address</h2>
+      <InputBar
+        inputType="text"
+        inputPlaceholder="Enter Address Here"
+        inputValue={addressValue}
+        handleChange={handleAddressValueChange}
       />
     </div>
   );
